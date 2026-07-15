@@ -1,0 +1,51 @@
+/* Fonts — Frank Lam Design System
+   Monospace-forward, technical/dev feel (per brand direction).
+   No brand-supplied font files were provided, so we use JetBrains Mono,
+   a widely-used open-source (OFL) monospace family with a strong "dev tool"
+   feel. Files are loaded from the official JetBrains/JetBrainsMono GitHub
+   repo via jsDelivr CDN (no local binaries copied in this project).
+   Flagging this substitution: if Frank has a preferred/licensed font, drop
+   .woff2 files in assets/fonts/ and point these src: urls at them instead. */
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono@master/fonts/webfonts/JetBrainsMono-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono@master/fonts/webfonts/JetBrainsMono-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono@master/fonts/webfonts/JetBrainsMono-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono@master/fonts/webfonts/JetBrainsMono-SemiBold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono@master/fonts/webfonts/JetBrainsMono-Bold.woff2') format('woff2');
+}
+
+:root {
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  /* single-family system: weight/size/case carry the hierarchy, not a font swap */
+  --font-display: var(--font-mono);
+  --font-body: var(--font-mono);
+}

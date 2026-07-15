@@ -1,0 +1,25 @@
+/* Base resets shared across the design system */
+* { box-sizing: border-box; }
+
+body {
+  background: var(--surface-page);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover {
+  color: var(--accent-hover);
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--ink-900);
+}

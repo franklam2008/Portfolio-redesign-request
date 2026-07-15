@@ -1,0 +1,49 @@
+/* Colors — warm neutrals + one rust accent */
+:root {
+  /* base palette */
+  --cream-100: #FBF8F1;
+  --cream-200: #F3EDE0;
+  --sand-300: #E8DFC9;
+  --sand-400: #D9CCAC;
+  --stone-500: #A79C86;
+  --stone-600: #7A705E;
+  --ink-700: #4A443A;
+  --ink-800: #2B2620;
+  --ink-900: #1B1712;
+
+  --rust-400: #D77A50;
+  --rust-500: #C1512F;
+  --rust-600: #A03F22;
+  --rust-700: #7C2F19;
+
+  --moss-500: #6B7A4F;   /* success */
+  --clay-500: #B23A2C;   /* error/danger, distinct from accent */
+  --gold-500: #C08A2E;   /* warning */
+
+  /* semantic aliases */
+  --surface-page: var(--cream-100);
+  --surface-raised: var(--cream-200);
+  --surface-sunken: var(--sand-300);
+  --surface-inverse: var(--ink-900);
+
+  --border-subtle: var(--sand-400);
+  --border-default: var(--stone-500);
+  --border-strong: var(--ink-800);
+
+  --text-primary: var(--ink-900);
+  --text-secondary: var(--ink-700);
+  --text-muted: var(--stone-600);
+  --text-on-accent: var(--cream-100);
+  --text-on-inverse: var(--cream-200);
+
+  --accent: var(--rust-500);
+  --accent-hover: var(--rust-600);
+  --accent-active: var(--rust-700);
+  --accent-soft: #F0D9CC;
+
+  --state-success: var(--moss-500);
+  --state-danger: var(--clay-500);
+  --state-warning: var(--gold-500);
+
+  --focus-ring: var(--rust-500);
+}

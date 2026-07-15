@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Projects — Frank Lam</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Selected projects by Frank Lam — Angular, React, and Node.js apps shipped to production, from K-12 education software to bank account-opening flows.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/colors.css">
+<link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/typography.css">
+<link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/base.css">
+<link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/styles.css">
+<script src="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/_ds_bundle.js"></script>
+</head>
+<body style="margin:0;background:var(--surface-page);">
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="content.js"></script>
+<script type="text/babel" src="layout.jsx"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel">
+const { Button, Tag } = window.FrankLamDesignSystem_07ac32;
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "logoStyle": "image"
+}/*EDITMODE-END*/;
+const { projects } = window.SITE;
+
+function ProjectCard({ project }) {
+  const [hover, setHover] = React.useState(false);
+  return (
+    <article
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={{
+        background: 'var(--surface-page)',
+        border: '1px solid',
+        borderColor: hover ? 'var(--border-strong)' : 'var(--border-subtle)',
+        borderRadius: 'var(--radius-md)',
+        padding: 'var(--space-5)',
+        boxShadow: hover ? 'var(--shadow-sm)' : 'none',
+        transform: hover ? 'translateY(-2px)' : 'none',
+        transition: 'border-color var(--duration-base) var(--ease-standard), box-shadow var(--duration-base) var(--ease-standard), transform var(--duration-base) var(--ease-standard)',
+        display: 'flex', flexDirection: 'column', gap: 'var(--space-3)',
+      }}
+    >
+      <h3 style={{ margin: 0, fontFamily: 'var(--font-mono)', fontSize: 'var(--text-lg)', fontWeight: 'var(--weight-semibold)', letterSpacing: 'var(--tracking-tight)', color: 'var(--text-primary)' }}>
+        {project.title}
+      </h3>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
+        {project.tags.map((t) => <Tag key={t}>{t}</Tag>)}
+      </div>
+      <p style={{ margin: 0, fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-normal)', color: 'var(--text-secondary)' }}>
+        {project.text}
+      </p>
+      <div style={{ display: 'flex', gap: 'var(--space-3)', marginTop: 'var(--space-2)' }}>
+        {project.links.map((link) => (
+          <Button key={link.label} as="a" href={link.href} target="_blank" rel="noreferrer" variant="secondary" size="sm">
+            {link.label}
+          </Button>
+        ))}
+      </div>
+    </article>
+  );
+}
+
+function App() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  return (
+    <React.Fragment>
+      <window.Header active="projects" logoStyle={t.logoStyle} />
+      <TweaksPanel>
+        <TweakSection label="Logo mark" />
+        <TweakRadio label="Style" value={t.logoStyle}
+                    options={['image', 'initials', 'wordmark-text']}
+                    onChange={(v) => setTweak('logoStyle', v)} />
+      </TweaksPanel>
+      <section style={{ maxWidth: 'var(--container-wide)', margin: '0 auto', padding: 'var(--space-9) var(--space-6) var(--space-9)' }}>
+        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', flexWrap: 'wrap', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
+          <h1 style={{
+            fontFamily: 'var(--font-mono)', fontSize: 'var(--text-2xl)', letterSpacing: 'var(--tracking-tight)',
+            fontWeight: 'var(--weight-semibold)', color: 'var(--text-primary)', margin: 0,
+          }}>
+            Projects.
+          </h1>
+          <a href="contact.html" style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', color: 'var(--accent)', textDecoration: 'none' }}>
+            Get in touch &rarr;
+          </a>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 'var(--space-5)' }}>
+          {projects.map((p) => <ProjectCard key={p.title} project={p} />)}
+        </div>
+      </section>
+      <window.Footer />
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

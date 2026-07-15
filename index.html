@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Frank Lam — Software engineer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Frank Lam — software developer building practical products with Angular and the MERN stack, based in Henderson, Nevada.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/colors.css">
+<link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/typography.css">
+<link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/base.css">
+<link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/styles.css">
+<script src="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/_ds_bundle.js"></script>
+</head>
+<body style="margin:0;background:var(--surface-page);">
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="content.js"></script>
+<script type="text/babel" src="layout.jsx"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel">
+const { Button, Card } = window.FrankLamDesignSystem_07ac32;
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "logoStyle": "image"
+}/*EDITMODE-END*/;
+const { hero, homeIntro, featuredProjectTitles, projects } = window.SITE;
+
+function Hero() {
+  return (
+    <section style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: 'var(--space-9) var(--space-6) var(--space-7)', paddingTop: 120, paddingBottom: 120 }}>
+      <p style={{
+        fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', letterSpacing: 'var(--tracking-wider)',
+        textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 var(--space-4)', fontWeight: 'var(--weight-semibold)',
+      }}>
+        {hero.eyebrow}
+      </p>
+      <h1 style={{
+        fontFamily: 'var(--font-mono)', fontSize: 'var(--text-3xl)', lineHeight: 'var(--leading-tight)',
+        letterSpacing: 'var(--tracking-tight)', fontWeight: 'var(--weight-semibold)', color: 'var(--text-primary)', margin: '0 0 var(--space-5)',
+      }}>
+        {hero.title}
+      </h1>
+      <p style={{
+        fontFamily: 'var(--font-mono)', fontSize: 'var(--text-md)', lineHeight: 'var(--leading-normal)',
+        color: 'var(--text-secondary)', maxWidth: 620, margin: '0 0 var(--space-6)',
+      }}>
+        {hero.subtitle}
+      </p>
+      <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
+        <Button as="a" href="projects.html" variant="primary">My work</Button>
+        <Button as="a" href="contact.html" variant="ghost">Get in touch</Button>
+      </div>
+    </section>
+  );
+}
+
+function Intro() {
+  return (
+    <section style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: '0 var(--space-6) var(--space-9)' }}>
+      <p style={{
+        fontFamily: 'var(--font-mono)', fontSize: 'var(--text-md)', lineHeight: 'var(--leading-normal)',
+        color: 'var(--text-secondary)', maxWidth: 680, margin: 0, borderLeft: '2px solid var(--border-default)', paddingLeft: 'var(--space-5)',
+      }}>
+        {homeIntro}
+      </p>
+    </section>
+  );
+}
+
+function FeaturedWork() {
+  const featured = featuredProjectTitles.map((t) => projects.find((p) => p.title === t));
+  return (
+    <section style={{ maxWidth: 'var(--container-wide)', margin: '0 auto', padding: '0 var(--space-6) var(--space-9)' }}>
+      <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 'var(--space-5)' }}>
+        <p style={{
+          fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', letterSpacing: 'var(--tracking-wider)',
+          textTransform: 'uppercase', color: 'var(--text-muted)', margin: 0, fontWeight: 'var(--weight-semibold)',
+        }}>
+          Selected work
+        </p>
+        <a href="projects.html" style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', color: 'var(--accent)', textDecoration: 'none' }}>
+          View all projects &rarr;
+        </a>
+      </div>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-5)' }}>
+        {featured.map((p) => (
+          <Card key={p.title} title={p.title} description={p.text} tags={p.tags} href="projects.html" />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function App() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  return (
+    <React.Fragment>
+      <window.Header active="home" logoStyle={t.logoStyle} />
+      <Hero />
+      <Intro />
+      <FeaturedWork />
+      <window.Footer />
+      <TweaksPanel>
+        <TweakSection label="Logo mark" />
+        <TweakRadio label="Style" value={t.logoStyle}
+                    options={['image', 'initials', 'wordmark-text']}
+                    onChange={(v) => setTweak('logoStyle', v)} />
+      </TweaksPanel>
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+/* Typography scale — monospace-forward, tight practical scale for a
+   one-person technical portfolio. Sizes in rem, 16px root. */
+:root {
+  --text-xs: 0.75rem;    /* 12px — labels, meta, timestamps */
+  --text-sm: 0.875rem;   /* 14px — captions, tags, nav */
+  --text-base: 1rem;     /* 16px — body */
+  --text-md: 1.125rem;   /* 18px — lead paragraphs */
+  --text-lg: 1.5rem;     /* 24px — subheads */
+  --text-xl: 2rem;       /* 32px — section titles */
+  --text-2xl: 2.75rem;   /* 44px — page titles */
+  --text-3xl: 4rem;      /* 64px — hero */
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.6;
+  --leading-loose: 1.8;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-wider: 0.08em; /* used on all-caps labels */
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+}
