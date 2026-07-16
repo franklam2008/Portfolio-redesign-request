@@ -45,9 +45,9 @@ window.SITE = {
     },
     {
       title: 'this.Portfolio',
-      tags: ['React', 'Gatsby', 'Semantic UI'],
-      text: 'A portfolio built with React and Gatsby, styled after Semantic UI. Hosted on Netlify for fast, reliable static delivery.',
-      links: [{ label: 'GitHub', href: 'https://github.com/franklam2008/Portfolio' }],
+      tags: ['React', 'Claude', 'Design system'],
+      text: "This site. Design system generated with Claude, then the implementation built with AI-assisted coding — warm neutral palette, JetBrains Mono throughout, a small custom component set.",
+      links: [{ label: 'GitHub', href: 'https://github.com/franklam2008/Portfolio-redesign-request' }],
     },
     {
       title: 'Professional Banking Dashboard',
