@@ -40,19 +40,19 @@ window.SITE = {
     {
       title: 'Huntington Bank BAO',
       tags: ['Angular', 'TypeScript', 'Ngrx', 'RxJS'],
-      text: "Worked on Huntington Bank's Business Online Account Opening flow using Agile Scrum. Used TypeScript, Ngrx, and RxJS for state management and component implementation. Raised unit test coverage from 11% to 80% with Jest.",
+      text: "Worked on Huntington Bank's Business Online Account Opening flow using Agile Scrum. Raised unit test coverage from 11% to 80% with Jest.",
       links: [{ label: 'Live Site', href: 'https://apply.huntington.com/new/business/welcome?product=PT' }],
     },
     {
       title: 'this.Portfolio',
       tags: ['React', 'Claude', 'Design system'],
-      text: "This site. Design system generated with Claude, then the implementation built with AI-assisted coding — warm neutral palette, JetBrains Mono throughout, a small custom component set.",
+      text: "This site. Design system generated with Claude, then implemented with AI-assisted coding — warm neutral palette, JetBrains Mono throughout, a small custom component set.",
       links: [{ label: 'GitHub', href: 'https://github.com/franklam2008/Portfolio-redesign-request' }],
     },
     {
       title: 'Professional Banking Dashboard',
       tags: ['React', 'Redux', 'Material UI'],
-      text: 'A banking dashboard built with React and Redux for state management, with a Material UI-based interface.',
+      text: 'A banking dashboard UI built with React and Redux, styled with Material UI.',
       links: [
         { label: 'GitHub', href: 'https://github.com/franklam2008/banking-dashboard' },
         { label: 'Live Site', href: 'https://banking-dashboard.netlify.com' },
@@ -61,7 +61,7 @@ window.SITE = {
     {
       title: 'Media Application',
       tags: ['React', 'Firebase', 'Bootstrap'],
-      text: 'A media-focused single-page app with Firebase authentication and a custom Bootstrap-based UI. Hosted on Netlify.',
+      text: 'A media-focused single-page app with Firebase authentication and a custom Bootstrap UI, hosted on Netlify.',
       links: [
         { label: 'GitHub', href: 'https://github.com/franklam2008/Media-Application' },
         { label: 'Live Site', href: 'https://kflam.netlify.app/' },
@@ -70,7 +70,7 @@ window.SITE = {
     {
       title: 'Business E-commerce',
       tags: ['WordPress', 'PHP'],
-      text: 'An e-commerce site built on WordPress that has generated over a hundred thousand in sales, with Getresponse and Pipedrive for email marketing and CRM, Tidio live chat, and Zendesk support tickets.',
+      text: "An e-commerce site built on WordPress that's generated over $100,000 in sales. Uses GetResponse and Pipedrive for email marketing and CRM, Tidio for live chat, and Zendesk for support.",
       links: [{ label: 'Showcase', href: '#' }],
     },
     {
