@@ -33,7 +33,7 @@ function Header({ active, logoStyle = 'image' }) {
       padding: '18px var(--space-6)',
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
     }}>
-      <a href="index.html" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+      <a href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
         <LogoMark logoStyle={logoStyle} />
       </a>
       <nav style={{ display: 'flex', gap: 'var(--space-6)' }}>

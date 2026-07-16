@@ -51,8 +51,8 @@ function Hero() {
         {hero.subtitle}
       </p>
       <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
-        <Button as="a" href="projects.html" variant="primary">My work</Button>
-        <Button as="a" href="contact.html" variant="ghost">Get in touch</Button>
+        <Button as="a" href="/projects" variant="primary">My work</Button>
+        <Button as="a" href="/contact" variant="ghost">Get in touch</Button>
       </div>
     </section>
   );
@@ -82,13 +82,13 @@ function FeaturedWork() {
         }}>
           Selected work
         </p>
-        <a href="projects.html" style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', color: 'var(--accent)', textDecoration: 'none' }}>
+        <a href="/projects" style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', color: 'var(--accent)', textDecoration: 'none' }}>
           View all projects &rarr;
         </a>
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-5)' }}>
         {featured.map((p) => (
-          <Card key={p.title} title={p.title} description={p.text} tags={p.tags} href="projects.html" />
+          <Card key={p.title} title={p.title} description={p.text} tags={p.tags} href="/projects" />
         ))}
       </div>
     </section>

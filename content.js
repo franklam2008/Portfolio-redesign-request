@@ -3,10 +3,10 @@ window.SITE = {
   ownerName: 'Frank Lam',
 
   navLinks: [
-    { label: 'Home', href: 'index.html', key: 'home' },
-    { label: 'Projects', href: 'projects.html', key: 'projects' },
-    { label: 'Skills', href: 'skills.html', key: 'skills' },
-    { label: 'Contact', href: 'contact.html', key: 'contact' },
+    { label: 'Home', href: '/', key: 'home' },
+    { label: 'Projects', href: '/projects', key: 'projects' },
+    { label: 'Skills', href: '/skills', key: 'skills' },
+    { label: 'Contact', href: '/contact', key: 'contact' },
   ],
 
   contactLinks: [
