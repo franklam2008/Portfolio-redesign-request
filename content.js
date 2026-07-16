@@ -19,11 +19,11 @@ window.SITE = {
     eyebrow: 'Web developer — Henderson, Nevada',
     title: 'I build practical software for real problems.',
     subtitle:
-      "I'm a software developer who enjoys building practical products for businesses and everyday users. I focus on Angular and the MERN stack, and care about turning real problems into simple, reliable solutions.",
+      "I'm a software developer who enjoys building practical products for businesses and everyday users. I focus on Angular and the MERN stack, and build with AI coding agents as part of my day-to-day workflow.",
   },
 
   homeIntro:
-    "I'm always excited to keep learning and creating better software. Most of my work has been building and maintaining production Angular and React applications for real businesses — from K-12 education software to bank account-opening flows.",
+    "I'm always excited to keep learning and creating better software — lately that means working with AI coding agents alongside traditional development. Most of my work has been building and maintaining production Angular and React applications for real businesses — from K-12 education software to bank account-opening flows.",
 
   featuredProjectTitles: ['Carnegie Learning', 'Huntington Bank BAO', 'this.Portfolio'],
 
@@ -92,7 +92,7 @@ window.SITE = {
     },
     {
       title: 'Others',
-      skills: ['Contentful', 'Git', 'VS Code'],
+      skills: ['Contentful', 'Git', 'VS Code', 'AI coding agents'],
     },
   ],
 
