@@ -27,7 +27,7 @@ const { Button, Card } = window.FrankLamDesignSystem_07ac32;
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "logoStyle": "initials"
 }/*EDITMODE-END*/;
-const { hero, homeIntro, featuredProjectTitles, projects } = window.SITE;
+const { hero, homeIntro, featuredProjectTitles, projects, contactLinks } = window.SITE;
 
 function Hero() {
   return (
@@ -53,6 +53,7 @@ function Hero() {
       <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
         <Button as="a" href="/projects" variant="primary">My work</Button>
         <Button as="a" href="/contact" variant="ghost">Get in touch</Button>
+        <Button as="a" href={contactLinks[0].href} target="_blank" rel="noreferrer" variant="ghost">Resume</Button>
       </div>
     </section>
   );

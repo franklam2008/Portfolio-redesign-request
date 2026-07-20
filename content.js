@@ -10,6 +10,7 @@ window.SITE = {
   ],
 
   contactLinks: [
+    { label: 'Resume', href: 'assets/frank-lam-resume.pdf' },
     { label: 'GitHub', href: 'https://github.com/franklam2008' },
     { label: 'Email', href: 'mailto:franklam2008@gmail.com' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/frank-lam-010a9253' },
