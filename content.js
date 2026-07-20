@@ -72,7 +72,6 @@ window.SITE = {
       title: 'Business E-commerce',
       tags: ['WordPress', 'PHP'],
       text: "An e-commerce site built on WordPress that's generated over $100,000 in sales. Uses GetResponse and Pipedrive for email marketing and CRM, Tidio for live chat, and Zendesk for support.",
-      image: 'assets/projects/business-ecommerce.jpg',
       links: [{ label: 'Showcase', href: 'assets/projects/business-ecommerce.png' }],
     },
     {
