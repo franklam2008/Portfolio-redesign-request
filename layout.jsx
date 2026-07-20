@@ -26,7 +26,7 @@ function LogoMark({ logoStyle }) {
 function Header({ active, logoStyle = 'image' }) {
   const { NavLink } = window.FrankLamDesignSystem_07ac32;
   return (
-    <header style={{
+    <header className="site-header" style={{
       position: 'sticky', top: 0, zIndex: 10,
       background: 'var(--surface-page)',
       borderBottom: '1px solid var(--border-subtle)',
@@ -36,7 +36,7 @@ function Header({ active, logoStyle = 'image' }) {
       <a href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
         <LogoMark logoStyle={logoStyle} />
       </a>
-      <nav style={{ display: 'flex', gap: 'var(--space-6)' }}>
+      <nav className="site-nav" style={{ display: 'flex', gap: 'var(--space-6)' }}>
         {window.SITE.navLinks.map((l) => (
           <NavLink key={l.key} href={l.href} active={active === l.key}>
             {l.label}

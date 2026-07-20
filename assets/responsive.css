@@ -1,0 +1,23 @@
+/* Mobile overrides. Everything else in this site is styled with inline
+   React styles, which can't respond to viewport width — these targeted
+   classes + !important patch the few spots that break below ~640px. */
+@media (max-width: 640px) {
+  .site-header {
+    flex-wrap: wrap;
+    row-gap: var(--space-3);
+  }
+  .site-nav {
+    gap: var(--space-5) !important;
+  }
+  .hero-section {
+    padding-top: var(--space-8) !important;
+    padding-bottom: var(--space-7) !important;
+  }
+  .hero-title {
+    font-size: var(--text-2xl) !important;
+  }
+  .featured-grid,
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

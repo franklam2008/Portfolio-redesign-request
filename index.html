@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/spacing.css">
 <link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/base.css">
 <link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/styles.css">
+<link rel="stylesheet" href="assets/responsive.css">
 <script src="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/_ds_bundle.js"></script>
 </head>
 <body style="margin:0;background:var(--surface-page);">
@@ -31,14 +32,14 @@ const { hero, homeIntro, featuredProjectTitles, projects, contactLinks } = windo
 
 function Hero() {
   return (
-    <section style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: 'var(--space-9) var(--space-6) var(--space-7)', paddingTop: 120, paddingBottom: 120 }}>
+    <section className="hero-section" style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: 'var(--space-9) var(--space-6) var(--space-7)', paddingTop: 120, paddingBottom: 120 }}>
       <p style={{
         fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', letterSpacing: 'var(--tracking-wider)',
         textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 var(--space-4)', fontWeight: 'var(--weight-semibold)',
       }}>
         {hero.eyebrow}
       </p>
-      <h1 style={{
+      <h1 className="hero-title" style={{
         fontFamily: 'var(--font-mono)', fontSize: 'var(--text-3xl)', lineHeight: 'var(--leading-tight)',
         letterSpacing: 'var(--tracking-tight)', fontWeight: 'var(--weight-semibold)', color: 'var(--text-primary)', margin: '0 0 var(--space-5)',
       }}>
@@ -87,7 +88,7 @@ function FeaturedWork() {
           View all projects &rarr;
         </a>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-5)' }}>
+      <div className="featured-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-5)' }}>
         {featured.map((p) => (
           <Card key={p.title} title={p.title} description={p.text} tags={p.tags} href="/projects" />
         ))}
