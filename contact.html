@@ -4,45 +4,74 @@
 <meta charset="utf-8">
 <title>Contact — Frank Lam</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Get in touch with Frank Lam — software developer available for new projects.">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/fonts.css">
-<link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/colors.css">
-<link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/typography.css">
-<link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/spacing.css">
-<link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/base.css">
-<link rel="stylesheet" href="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/styles.css">
-<link rel="stylesheet" href="assets/responsive.css">
-<script src="_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/_ds_bundle.js"></script>
+<meta name="description" content="Get in touch with Frank Lam, a software developer in Henderson, Nevada. Send a message or reach out by email, GitHub or LinkedIn.">
+<meta name="theme-color" content="#FBF8F1">
+<link rel="canonical" href="https://www.franklam.us/contact">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Frank Lam">
+<meta property="og:title" content="Contact — Frank Lam">
+<meta property="og:description" content="Let's talk. Send a message or reach out by email, GitHub or LinkedIn.">
+<meta property="og:url" content="https://www.franklam.us/contact">
+<meta property="og:image" content="https://www.franklam.us/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/fonts.css">
+<link rel="stylesheet" href="/_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/colors.css">
+<link rel="stylesheet" href="/_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/typography.css">
+<link rel="stylesheet" href="/_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/spacing.css">
+<link rel="stylesheet" href="/_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/tokens/base.css">
+<link rel="stylesheet" href="/_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/styles.css">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/_ds/frank-lam-design-system-07ac32cb-b791-4eff-bd58-65886ecf30cc/_ds_bundle.js"></script>
 </head>
 <body style="margin:0;background:var(--surface-page);">
 <div id="root"></div>
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<noscript>
+  <p style="font-family:monospace;padding:24px;max-width:640px;">Frank Lam — contact. This page needs JavaScript to display. Email: <a href="mailto:franklam2008@gmail.com">franklam2008@gmail.com</a>. <a href="https://github.com/franklam2008">GitHub</a>, <a href="https://www.linkedin.com/in/frank-lam-010a9253">LinkedIn</a>.</p>
+</noscript>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script src="content.js"></script>
-<script type="text/babel" src="layout.jsx"></script>
-<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script src="/content.js"></script>
+<script type="text/babel" src="/layout.jsx"></script>
 <script type="text/babel">
 const { Input, Button } = window.FrankLamDesignSystem_07ac32;
-const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "logoStyle": "initials"
-}/*EDITMODE-END*/;
 const { contactForm, contactLinks } = window.SITE;
+const { Page, Eyebrow } = window;
+
+const EMAIL_HREF = contactLinks.find((l) => l.label === 'Email').href; // mailto:...
+const EMAIL_ADDRESS = EMAIL_HREF.replace('mailto:', '');
+// Until a Formspree endpoint is set in content.js, the form opens the visitor's email app instead.
+const USE_FORMSPREE = !/YOUR_FORM_ID/.test(contactForm.formspreeEndpoint);
+
+const note = { fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', margin: 0 };
 
 function ContactSection() {
   const [values, setValues] = React.useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = React.useState('idle'); // idle | sending | sent | error
+  const [status, setStatus] = React.useState('idle'); // idle | sending | sent | error | invalid | mailto
 
   const onChange = (key) => (e) => setValues((v) => ({ ...v, [key]: e.target.value }));
   const onSubmit = async (e) => {
     e.preventDefault();
+    const message = values.message.trim();
+    const name = values.name.trim();
+    const email = values.email.trim();
+    if (!message) { setStatus('invalid'); return; }
+
+    if (!USE_FORMSPREE) {
+      const subject = encodeURIComponent('Message from ' + (name || 'your portfolio'));
+      const body = encodeURIComponent(message + '\n\n' + [name, email && '<' + email + '>'].filter(Boolean).join(' '));
+      window.location.href = EMAIL_HREF + '?subject=' + subject + '&body=' + body;
+      setStatus('mailto');
+      return;
+    }
+
     setStatus('sending');
     try {
       const res = await fetch(contactForm.formspreeEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(values),
+        body: JSON.stringify({ name, email, message }),
       });
       setStatus(res.ok ? 'sent' : 'error');
     } catch {
@@ -67,22 +96,30 @@ function ContactSection() {
         padding: 'var(--space-6)', background: 'var(--surface-raised)', maxWidth: 480, marginBottom: 'var(--space-8)',
       }}>
         {status === 'sent' ? (
-          <p style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', color: 'var(--state-success)', margin: 0 }}>
+          <p role="status" style={{ ...note, fontSize: 'var(--text-sm)', color: 'var(--state-success)' }}>
             Sent. Thanks &mdash; I'll get back to you.
           </p>
         ) : (
-          <form onSubmit={onSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
+          <form onSubmit={onSubmit} noValidate style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
             <Input label="Name" placeholder="Your name" value={values.name} onChange={onChange('name')} />
             <Input label="Email" type="email" placeholder="you@example.com" value={values.email} onChange={onChange('email')} />
             <Input label="Message" placeholder="What are you building?" multiline value={values.message} onChange={onChange('message')} />
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', color: 'var(--text-muted)', margin: 0 }}>
-              {contactForm.disclaimer}
-            </p>
-            {status === 'error' && (
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', color: 'var(--state-danger)', margin: 0 }}>
-                Something went wrong &mdash; try again, or email me directly.
-              </p>
-            )}
+            <p style={{ ...note, color: 'var(--text-muted)' }}>{contactForm.disclaimer}</p>
+            <div aria-live="polite">
+              {status === 'invalid' && (
+                <p style={{ ...note, color: 'var(--state-danger)' }}>Add a message first.</p>
+              )}
+              {status === 'error' && (
+                <p style={{ ...note, color: 'var(--state-danger)' }}>
+                  Something went wrong &mdash; try again, or email me at <a href={EMAIL_HREF}>{EMAIL_ADDRESS}</a>.
+                </p>
+              )}
+              {status === 'mailto' && (
+                <p style={{ ...note, color: 'var(--text-secondary)' }}>
+                  Opening your email app. If nothing opens, write to <a href={EMAIL_HREF}>{EMAIL_ADDRESS}</a>.
+                </p>
+              )}
+            </div>
             <div>
               <Button variant="primary" type="submit" disabled={status === 'sending'}>
                 {status === 'sending' ? 'Sending…' : 'Send'}
@@ -93,18 +130,16 @@ function ContactSection() {
       </div>
 
       <div>
-        <p style={{
-          fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', letterSpacing: 'var(--tracking-wider)',
-          textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 'var(--weight-semibold)', margin: '0 0 var(--space-4)',
-        }}>
-          Or reach me directly
-        </p>
+        <Eyebrow as="h2">Or reach me directly</Eyebrow>
         <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
-          {contactLinks.map((item) => (
-            <Button key={item.label} as="a" href={item.href} target={item.href.startsWith('#') ? undefined : '_blank'} rel="noreferrer" variant="secondary" size="sm">
-              {item.label}
-            </Button>
-          ))}
+          {contactLinks.map((item) => {
+            const external = /^https?:/.test(item.href) || item.href.endsWith('.pdf');
+            return (
+              <Button key={item.label} as="a" href={item.href} target={external ? '_blank' : undefined} rel="noreferrer" variant="secondary" size="sm">
+                {item.label}
+              </Button>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -112,19 +147,10 @@ function ContactSection() {
 }
 
 function App() {
-  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
   return (
-    <React.Fragment>
-      <window.Header active="contact" logoStyle={t.logoStyle} />
+    <Page active="contact">
       <ContactSection />
-      <window.Footer />
-      <TweaksPanel>
-        <TweakSection label="Logo mark" />
-        <TweakRadio label="Style" value={t.logoStyle}
-                    options={['image', 'initials', 'wordmark-text']}
-                    onChange={(v) => setTweak('logoStyle', v)} />
-      </TweaksPanel>
-    </React.Fragment>
+    </Page>
   );
 }
 ReactDOM.createRoot(document.getElementById('root')).render(<App />);
